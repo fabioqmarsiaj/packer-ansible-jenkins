@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Jfrog') {
             steps {
-                sh('curl -uadmin:AP5jYGTMVLpZepNRDHnMuuWD1H2 -T temafinal1-cloud/build/libs/temafinal1-cloud-0.0.1-SNAPSHOT.jar "http://localhost:8081/artifactory/example-repo-local/app.jar"')
+                sh('curl -uadmin:AP5jYGTMVLpZepNRDHnMuuWD1H2 -T build/libs/temafinal1-cloud-0.0.1-SNAPSHOT.jar "http://localhost:8081/artifactory/example-repo-local/app.jar"')
             }
         }
     }
