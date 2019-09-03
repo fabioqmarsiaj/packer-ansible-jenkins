@@ -1,8 +1,5 @@
 {
-  "builders": [{
-    "type": "file",
-    "target": "./app.war"
-  },
+  "builders": [
   {
     "type": "docker",
     "image": "ubuntu:16.04",
@@ -13,7 +10,11 @@
       "type": "ansible",
       "user": "root",
       "playbook_file": "./playbook.yml"
-    }
+    },
+   {
+     "type": "file",
+     "target": "./app.war"
+   }
   ],
   "post-processors": [
     [
