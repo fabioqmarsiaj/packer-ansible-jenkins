@@ -6,6 +6,10 @@ pipeline {
                 sh('curl -uadmin:password -O "http://localhost:8081/artifactory/example-repo-local/app.war"')
             }
         }
-
+        stage('Packer file') {
+            steps {
+                sh('./packer build packer.json')
+            }
+        }
     }
 }

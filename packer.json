@@ -1,7 +1,12 @@
 {
   "builders": [{
     "type": "file",
-    "target": ""
+    "target": "./app.war"
+  },
+  {
+    "type": "docker",
+    "image": "openjdk8-jre",
+    "commit": "true"
   }],
  "provisioners": [
     {
@@ -16,13 +21,6 @@
         "repository": "example/repo",
         "tag": "latest",
         "force": "true"
-      },
-      {
-        "type": "docker-push",
-        "login": "true",
-        "login_username": "login",
-        "login_password": "password",
-        "login_email": "email"
       }
     ]
   ]
