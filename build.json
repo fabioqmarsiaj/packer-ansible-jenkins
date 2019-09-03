@@ -19,7 +19,7 @@
     [
       {
         "type": "docker-tag",
-        "repository": "teste",
+        "repository": "antonioazambuja/teste",
         "tag": "latest",
         "force": "true"
       },
