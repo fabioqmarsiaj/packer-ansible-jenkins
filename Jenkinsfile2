@@ -1,11 +1,13 @@
 pipeline {
    agent any
+   options {
+       skipDefaultCheckout true
+     }
     stages {
         stage('war file download') {
             steps {
                 sh('curl -uadmin:password -O "http://localhost:8081/artifactory/example-repo-local/app.war"')
             }
         }
-
     }
 }
