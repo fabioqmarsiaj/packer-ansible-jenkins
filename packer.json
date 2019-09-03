@@ -18,9 +18,16 @@
     [
       {
         "type": "docker-tag",
-        "repository": "example/repo",
+        "repository": "antonioazambuja/teste",
         "tag": "latest",
         "force": "true"
+      },
+      {
+        "type": "docker-push",
+        "login": "true",
+        "login_username": "antonioazambuja",
+        "login_password": "freest3P*",
+        "login_email": "antonioazambuja_@hotmail.com"
       }
     ]
   ]
