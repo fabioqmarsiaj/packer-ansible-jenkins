@@ -17,6 +17,12 @@
   "post-processors": [
     [
       {
+        "type": "docker-tag",
+        "repository": "docker.io/antonioazambuja/teste",
+        "tag": "latest",
+        "force": "true"
+      },
+      {
         "type": "docker-push",
         "login": "true",
         "login_username": "antonioazambuja",
