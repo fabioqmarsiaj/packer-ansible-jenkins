@@ -1,13 +1,12 @@
 {
   "builders": [{
-    "type": "docker",
-    "image": "ubuntu:16.04",
-    "commit": "true"
+    "type": "file",
+    "target": ""
   }],
  "provisioners": [
     {
-      "type": "shell",
-      "inline": ["echo 'hello!' > /root/foo"]
+      "type": "ansible",
+      "playbook_file": "./playbook.yml"
     }
   ],
   "post-processors": [
