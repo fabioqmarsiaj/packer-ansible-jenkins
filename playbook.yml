@@ -1,0 +1,5 @@
+- name: echo-test
+  hosts: all
+  tasks:
+    - name: echo
+      command: echo OIII
