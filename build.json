@@ -17,7 +17,7 @@
    },
    {
      "type": "shell",
-     "inline": ["apt-get update"]
+     "inline": ["sudo apt-get -y update"]
    }
   ],
   "post-processors": [
