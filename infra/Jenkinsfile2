@@ -9,7 +9,7 @@ pipeline {
         stage('Packer file') {
             steps {
                 sh('cd infra/')
-                sh('./packer build packer.json')
+                sh('packer build packer.json')
             }
         }
     }
