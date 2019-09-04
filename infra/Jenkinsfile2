@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('war file download') {
             steps {
-                sh('curl -uadmin:password -O "http://localhost:8081/artifactory/example-repo-local/app.war"')
+                sh('curl -uadmin:password -O "http://localhost:8081/artifactory/example-repo-local/app.jar"')
             }
         }
         stage('Packer file') {
