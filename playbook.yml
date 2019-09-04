@@ -3,3 +3,8 @@
   tasks:
     - name: echo
       command: echo OIII
+    - name: update ubuntu
+      become: true
+      apt:
+        upgrade: yes
+        update_cache: yes
