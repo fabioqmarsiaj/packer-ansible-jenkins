@@ -3,5 +3,5 @@
   become: yes
  
   tasks:
-    - name: Update apt repo
+    - name: Echo
       command: echo OI

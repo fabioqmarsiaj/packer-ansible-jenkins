@@ -3,7 +3,11 @@
   {
     "type": "docker",
     "image": "openjdk:latest",
-    "commit": "true"
+    "commit": "true",
+    "changes": [
+      "EXPOSE 8090",
+      "ENTRYPOINT [\"java\",\"-jar\",\"/usr/local/desafio-final/temafinal1-cloud-0.0.1-SNAPSHOT.jar\"]"
+    ]
   }],
  "provisioners": [
    {

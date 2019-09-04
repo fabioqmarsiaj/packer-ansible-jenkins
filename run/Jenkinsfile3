@@ -1,0 +1,16 @@
+pipeline {
+   agent any
+    stages {
+        stage('Git') {
+            steps {
+               git url: 'https://github.com/fabioqmarsiaj/temafinal1-cloud'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh('cd build-app/')
+                sh('./gradlew clean build')
+            }
+        }
+    }
+}
