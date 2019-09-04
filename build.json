@@ -2,10 +2,19 @@
   "builders": [
   {
     "type": "docker",
-    "image": "python:3",
+    "image": "openjdk:latest",
     "commit": "true"
   }],
  "provisioners": [
+   {
+     "type": "shell",
+     "inline": ["mkdir /usr/local/desafio-final"]
+   },
+   {
+      "type": "file",
+      "source": "./build/libs/temafinal1-cloud-0.0.1-SNAPSHOT.jar",
+      "destination": "/usr/local/desafio-final/temafinal1-cloud-0.0.1-SNAPSHOT.jar"
+   },
    {
      "type": "ansible",
      "playbook_file": "playbook.yml"
