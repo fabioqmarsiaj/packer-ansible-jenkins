@@ -5,7 +5,7 @@ pipeline {
             steps {
 		sh '''
                    cd antonio-azambuja/temafinal1-cloud/
-		   gradle clean build
+		   gradle build
                    '''
             }
         }
