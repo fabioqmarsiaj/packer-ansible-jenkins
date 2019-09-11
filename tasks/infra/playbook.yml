@@ -9,14 +9,15 @@
       raw: apk add python3
 
   tasks:
-    - name: Include vars of stuff.yaml into the 'stuff' variable (2.2).
+    - name: Install basic packages
+      package:
+        name: ['aptitude','unzip']
+        state: present
+        update_cache: yes
+
+    - name: Adicionando vars
       include_vars:
         file: vars.yml
-
-    - name: Download Tomcat
-      get_url:
-        url: "{{ tomcat_archive_url }}"
-        dest: "{{ tomcat_archive_dest }}"
 
     - name: Criando a pastas do tomcat
       file:
@@ -25,7 +26,7 @@
 
     - name: Extraindo tomcat
       unarchive:
-        src: "{{ tomcat_archive_dest }}"
+        src: "{{ tomcat_archive_url }}"
         dest: /opt/tomcat
         remote_src: yes
 
