@@ -17,7 +17,7 @@
 
     - name: Criando a pastas do tomcat
       file:
-        path: /opt/apache-tomcat-9.0.24
+        path: /opt/tomcat/apache-tomcat-9.0.24
         state: directory
     
     - name: download tomcat
@@ -28,10 +28,10 @@
     - name: Extraindo tomcat
       unarchive:
         src: "{{ tomcat_archive_dest }}"
-        dest: /opt/apache-tomcat-9.0.24
+        dest: /opt/tomcat
         remote_src: yes
 
     - name: Copiar .war para pasta desafio-final
       copy:
         src: ../../app.war
-        dest: /opt/apache-tomcat-9.0.24/webapps/app.war
+        dest: /opt/tomcat/apache-tomcat-9.0.24/webapps/app.war
