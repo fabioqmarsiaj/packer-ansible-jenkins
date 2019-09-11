@@ -1,32 +1,19 @@
-HELP.md
+# Ignore Gradle project-specific cache directory
 .gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**
-!**/src/test/**
 
-### STS ###
-.apt_generated
+# Ignore Gradle build output directory
+build
+
+**/bin/*
+**/build/*
+**/.idea/*
+**/.gradle/*
+**/.settings/*
+**/gradle/*
 .classpath
-.factorypath
+gradlew.bat
 .project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-out/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
+settings.gradle
+/.metadata/
+/.recommenders/
+/out/

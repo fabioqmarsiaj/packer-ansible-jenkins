@@ -1,0 +1,33 @@
+pipeline {
+   agent any
+    stages {
+        stage('jar file download') {
+            steps {
+                    rtServer (
+                        id: "ArtifactoryJar",
+                        url: "http://localhost:8081/artifactory",
+                        username: env.ENV_JFROG_USER,
+                        password: env.ENV_JFROG_PASSWORD
+                    )
+
+                    rtDownload (
+                        serverId: "ArtifactoryJar",
+                        spec:
+                            """{
+                              "files": [
+                                {
+                                  "pattern": "example-repo-local/",
+                                  "target": "antonio-azambuja/temafinal1-cloud/app.jar"
+                                }
+                             ]
+                            }"""
+                    )
+            }
+        }
+        stage('Packer file') {
+            steps {
+                sh('packer build -var-file=antonio-azambuja/temafinal1-cloud/tasks/infra/variables.json antonio-azambuja/temafinal1-cloud/tasks/infra/build.json')
+            }
+        }
+    }
+}

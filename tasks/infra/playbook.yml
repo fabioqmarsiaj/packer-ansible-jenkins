@@ -1,0 +1,21 @@
+- hosts: all
+  become_user: sudo
+  gather_facts: no
+
+  pre_tasks:
+    - name: apk update
+      raw: apk update
+    - name: install python3
+      raw: apk add python3
+
+  tasks:
+    - name: Criando pasta desafio-final
+      file:
+        path: /usr/local/desafio-final
+        state: directory
+
+    - name: Copiar .jar para pasta desafio-final
+      copy:
+        src: ../../app.jar
+        dest: /usr/local/desafio-final/app.jar
+

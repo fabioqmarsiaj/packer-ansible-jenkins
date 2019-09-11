@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+    stages {
+        stage('Run docker image') {
+            steps {
+                sh('docker pull fabioqmarsiaj/cloudnative:latest')
+                sh('docker run -d -p 8083:8083 fabioqmarsiaj/cloudnative:latest')
+            }
+        }
+    }
+}

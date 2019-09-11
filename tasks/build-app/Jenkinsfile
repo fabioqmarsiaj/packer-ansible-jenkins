@@ -1,0 +1,36 @@
+pipeline {
+   agent any
+    stages {
+        stage('Build') {
+            steps {
+		sh '''
+                   cd antonio-azambuja/temafinal1-cloud/
+		   gradle clean build
+                   '''
+            }
+        }
+        stage('Publish .jar to Jfrog') {
+            steps {
+                rtServer (
+                    id: "ArtifactoryJar",
+                    url: "http://localhost:8081/artifactory",
+                    username: env.ENV_JFROG_USER,
+                    password: env.ENV_JFROG_PASSWORD
+                )
+
+                rtUpload (
+                    serverId: "ArtifactoryJar",
+                    spec:
+                        """{
+                          "files": [
+                            {
+                              "pattern": "antonio-azambuja/temafinal1-cloud/build/libs/*temafinal1-cloud-0.0.1-SNAPSHOT*.jar",
+                              "target": "example-repo-local/app.jar"
+                            }
+                         ]
+                        }"""
+                )
+            }
+        }
+    }
+}

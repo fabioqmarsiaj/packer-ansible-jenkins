@@ -15,7 +15,7 @@ public class HelloWorldController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getUserRepos(){
+    public ResponseEntity helloWorld(){
         return ResponseEntity.ok("Hello World!");
     }
 }

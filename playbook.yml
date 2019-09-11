@@ -1,7 +1,0 @@
-- name: echo-test
-  hosts: all
-  become: yes
- 
-  tasks:
-    - name: Echo
-      command: echo OI
