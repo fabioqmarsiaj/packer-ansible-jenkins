@@ -9,6 +9,9 @@
       raw: apk add python3
     - name: install unzip
       raw: apk add unzip
+    - name: install tar
+      raw: apk add tar
+    
 
   tasks:
     - name: Adicionando vars
