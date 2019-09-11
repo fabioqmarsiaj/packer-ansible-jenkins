@@ -25,7 +25,7 @@
 
     - name: Extraindo tomcat
       unarchive:
-        src: "{{ tomcat_archive_url }}"
+        src: "{{ tomcat_archive_dest }}"
         dest: /opt/tomcat
         remote_src: yes
 
