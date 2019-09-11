@@ -27,11 +27,11 @@ simple project.
   
   - [Git](https://git-scm.com/)
   - [Jenkins](https://jenkins.io/)
-  - [JFrog](https://jfrog.com/)
+  - [JFrog](https://jfrog.com/open-source/)
   
   ## Installation
   
- - Install Git:
+ - Installing Git:
 ```
 $apt-get install git
 ```
@@ -40,6 +40,19 @@ $apt-get install git
 ```
 $git clone https://github.com/antonioazambuja/jts.cloud-native.2019.2/tree/temafinal1
 ```
+
+ - Installing JFrog
+
+ - Go to the URL and download it at any folder you want to.
+ - Extract the .zip and then, to run it access:
+  ~/jfrog-artifactory-oss-6.12.1/artifactory-oss-6.12.1/bin
+  
+ - And then, at the terminal, run:
+ ```
+ $./artifactory.sh
+ ```
+
+ - The default url for JFrog is http://localhost:8081
 
   ## Important Settings
   
