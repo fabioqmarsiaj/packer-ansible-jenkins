@@ -9,13 +9,23 @@
       raw: apk add python3
 
   tasks:
-    - name: Criando pasta desafio-final
+    - name: Download Tomcat
+      get_url:
+        url: "{{ tomcat_archive_url }}"
+        dest: "{{ tomcat_archive_dest }}"
+
+    - name: Criando a pastas do tomcat
       file:
-        path: /usr/local/desafio-final
+        path: /opt/tomcat
         state: directory
+
+    - name: Extraindo tomcat
+      unarchive:
+        src: "{{ tomcat_archive_dest }}"
+        dest: /opt/tomcat
+        remote_src: yes
 
     - name: Copiar .war para pasta desafio-final
       copy:
         src: ../../app.war
-        dest: /usr/local/desafio-final/app.war
-
+        dest: /opt/tomcat/webapps/app.war
