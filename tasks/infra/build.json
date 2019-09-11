@@ -7,7 +7,7 @@
     "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/sh"],
     "changes": [
       "EXPOSE 8080",
-      "ENTRYPOINT [\"java\",\"-jar\",\"/usr/local/desafio-final/app.jar\"]"
+      "ENTRYPOINT [\"java\",\"-jar\",\"/usr/local/desafio-final/app.war\"]"
     ]
   }],
  "provisioners": [

@@ -17,7 +17,7 @@ pipeline {
                               "files": [
                                 {
                                   "pattern": "example-repo-local/",
-                                  "target": "antonio-azambuja/temafinal1-cloud/app.jar"
+                                  "target": "antonio-azambuja/temafinal1-cloud/app.war"
                                 }
                              ]
                             }"""

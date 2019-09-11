@@ -24,8 +24,8 @@ pipeline {
                         """{
                           "files": [
                             {
-                              "pattern": "antonio-azambuja/temafinal1-cloud/build/libs/*temafinal1-cloud-0.0.1-SNAPSHOT*.jar",
-                              "target": "example-repo-local/app.jar"
+                              "pattern": "antonio-azambuja/temafinal1-cloud/build/libs/*.war",
+                              "target": "example-repo-local/app.war"
                             }
                          ]
                         }"""

@@ -14,8 +14,8 @@
         path: /usr/local/desafio-final
         state: directory
 
-    - name: Copiar .jar para pasta desafio-final
+    - name: Copiar .war para pasta desafio-final
       copy:
-        src: ../../app.jar
-        dest: /usr/local/desafio-final/app.jar
+        src: ../../app.war
+        dest: /usr/local/desafio-final/app.war
 

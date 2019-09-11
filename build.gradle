@@ -4,7 +4,6 @@ plugins {
     id 'war'
 }
 
-
 group = 'com.antoniofabio'
 sourceCompatibility = '1.8'
 
