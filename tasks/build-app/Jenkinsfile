@@ -4,8 +4,7 @@ pipeline {
         stage('Build') {
             steps {
 		sh '''
-                   cd antonio-azambuja/temafinal1-cloud/
-		   gradle build
+                   gradle clean build
                    '''
             }
         }
@@ -24,7 +23,7 @@ pipeline {
                         """{
                           "files": [
                             {
-                              "pattern": "antonio-azambuja/temafinal1-cloud/build/libs/*.war",
+                              "pattern": "build/libs/*.war",
                               "target": "example-repo-local/app.war"
                             }
                          ]

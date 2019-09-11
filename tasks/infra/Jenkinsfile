@@ -17,7 +17,7 @@ pipeline {
                               "files": [
                                 {
                                   "pattern": "example-repo-local/",
-                                  "target": "antonio-azambuja/temafinal1-cloud/app.war"
+                                  "target": "app.war"
                                 }
                              ]
                             }"""
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Packer file') {
             steps {
-                sh('packer build -var-file=antonio-azambuja/temafinal1-cloud/tasks/infra/variables.json antonio-azambuja/temafinal1-cloud/tasks/infra/build.json')
+                sh('packer build -var-file=tasks/infra/variables.json tasks/infra/build.json')
             }
         }
     }

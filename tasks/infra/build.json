@@ -13,7 +13,7 @@
  "provisioners": [
    {
      "type": "ansible",
-     "playbook_file": "antonio-azambuja/temafinal1-cloud/tasks/infra/playbook.yml"
+     "playbook_file": "tasks/infra/playbook.yml"
    }
   ],
   "post-processors": [
