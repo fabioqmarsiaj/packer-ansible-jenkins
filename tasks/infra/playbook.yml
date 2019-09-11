@@ -5,6 +5,8 @@
   pre_tasks:
     - name: apk update
       raw: apk update
+    - name: install unzip
+      raw: apk add unzip
     - name: install python3
       raw: apk add python3
 
