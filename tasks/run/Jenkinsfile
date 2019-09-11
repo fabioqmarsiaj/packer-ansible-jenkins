@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Run docker image') {
             steps {
-                sh('docker push antonioazambuja/teste:latest')
+                sh('docker pull antonioazambuja/teste:latest')
                 sh('docker run -d -p 8083:8080 antonioazambuja/teste:latest')
             }
         }
