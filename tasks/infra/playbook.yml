@@ -1,5 +1,4 @@
 - hosts: all
-  include_vars: vars.yml
   become_user: sudo
   gather_facts: no
 
@@ -10,6 +9,10 @@
       raw: apk add python3
 
   tasks:
+    - name: Include vars of stuff.yaml into the 'stuff' variable (2.2).
+      include_vars:
+        file: vars.yml
+
     - name: Download Tomcat
       get_url:
         url: "{{ tomcat_archive_url }}"
