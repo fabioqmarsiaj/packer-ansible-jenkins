@@ -9,12 +9,6 @@
       raw: apk add python3
 
   tasks:
-    - name: Install basic packages
-      package:
-        name: ['aptitude','unzip']
-        state: present
-        update_cache: yes
-
     - name: Adicionando vars
       include_vars:
         file: vars.yml
