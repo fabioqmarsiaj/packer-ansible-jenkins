@@ -37,4 +37,4 @@
     - name: Copiar .war para pasta desafio-final
       copy:
         src: ../../app.war
-        dest: /opt/tomcat/webapps/app.war
+        dest: /opt/tomcat/apache-tomcat-9.0.24/webapps/app.war
