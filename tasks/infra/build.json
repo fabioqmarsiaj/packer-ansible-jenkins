@@ -6,7 +6,7 @@
     "commit": "true",
     "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/sh"],
     "changes": [
-      "WORKDIR /opt/tomcat",
+      "WORKDIR /opt/tomcat/apache-tomcat-9.0.24",
       "ENTRYPOINT [\"bin/catalina.sh\",\"run\"]"
     ]
   }],
