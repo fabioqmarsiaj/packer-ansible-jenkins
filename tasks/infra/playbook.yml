@@ -7,12 +7,9 @@
       raw: apk update
     - name: install python3
       raw: apk add python3
-    - name: install unzip
-      raw: apk add unzip
     - name: install tar
       raw: apk add tar
     
-
   tasks:
     - name: Adicionando vars
       include_vars:
@@ -20,10 +17,10 @@
 
     - name: Criando a pastas do tomcat
       file:
-        path: /opt/tomcat
+        path: /opt/apache-tomcat-9.0.24
         state: directory
     
-    - name: download tomcar
+    - name: download tomcat
       get_url:
         url: "{{ tomcat_archive_url }}"
         dest: "{{ tomcat_archive_dest }}"
@@ -31,10 +28,10 @@
     - name: Extraindo tomcat
       unarchive:
         src: "{{ tomcat_archive_dest }}"
-        dest: /opt/tomcat
+        dest: /opt/apache-tomcat-9.0.24
         remote_src: yes
 
     - name: Copiar .war para pasta desafio-final
       copy:
         src: ../../app.war
-        dest: /opt/tomcat/apache-tomcat-9.0.24/webapps/app.war
+        dest: /opt/apache-tomcat-9.0.24/webapps/app.war
